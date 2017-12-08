@@ -6,12 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/css/app.css">
 
+        <!-- CSRF Stuff -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script>window.Laravel = { csrfToken: '{{ csrf_token() }}' }</script>
+
         <title>Tingle</title>        
     </head>
     <body>
         <div id="app">
-
+            <router-link tag="li" to="/" exact="">Home</router-link>
         </div>
-        <script src="/js/app.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
